@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     const folderIconsList = folderIcons.split("\n");
     const appIconsList = appIcons.split("\n");
 
+    //sort the icons list
+    folderIconsList.sort();
+    appIconsList.sort();
+
     let icongrid = document.getElementById("grid");
 
     // create the folder icons
@@ -28,6 +32,32 @@ document.addEventListener("DOMContentLoaded", async function () {
             img.title = icon;
             img.classList.add("icon");
             icongrid.appendChild(img);
+        }
+    });
+
+    let search = document.getElementById("search");
+
+    // filter the icons based on the search input
+    search.addEventListener("input", function (e) {
+        let value = e.target.value.toLowerCase();
+        let icons = icongrid.querySelectorAll("img");
+        icons.forEach((icon) => {
+            if (icon.src.toLowerCase().includes(value) || icon.alt.toLowerCase().includes(value)) {
+                icon.style.display = "block";
+                setTimeout(() => {
+                    icon.style.scale = "1";
+                }, 100);
+            } else {
+                icon.style.scale = "0";
+                icon.style.display = "none";
+            }
+        });
+    });
+
+    // open the image in a new tab when clicked
+    icongrid.addEventListener("click", function (e) {
+        if (e.target.tagName === "IMG") {
+            window.open(e.target.src, "_blank");
         }
     });
 });
