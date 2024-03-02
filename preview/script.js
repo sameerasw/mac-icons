@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     folderIconsList.forEach((icon) => {
         if (icon) {
             let img = document.createElement("img");
-            img.src = `/folder-icons/${icon}`;
+            img.src = `https://raw.githubusercontent.com/sameerasw/mac-icons/main/folder-icons/${icon}`;
             img.alt = icon;
             img.title = icon;
             img.classList.add("icon");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     appIconsList.forEach((icon) => {
         if (icon) {
             let img = document.createElement("img");
-            img.src = `/app-icons/${icon}`;
+            img.src = `https://raw.githubusercontent.com/sameerasw/mac-icons/main/app-icons/${icon}`;
             img.alt = icon;
             img.title = icon;
             img.classList.add("icon");
