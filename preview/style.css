@@ -1,0 +1,33 @@
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
+    margin: 1em 0 0em 0;
+}
+
+#grid{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    transition: all 0.5s ease-in-out;
+}
+
+img{
+    width: 6em;
+    height: auto;
+    margin: 10px;
+    transition: all 0.5s ease-in-out;
+    /* border-radius: 10px; */
+    /* background-color: #333; */
+    &:hover{
+        transform: scale(1.25);
+    }
+}
