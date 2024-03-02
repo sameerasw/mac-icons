@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     // read the two list.txt files inside the /folder-icons and /app-icons folders and get files names of each line from it
-    const folderIcons = await fetch("/folder-icons/list.txt").then((res) => res.text());
-    const appIcons = await fetch("/app-icons/list.txt").then((res) => res.text());
+    const folderIcons = await fetch("https://raw.githubusercontent.com/sameerasw/mac-icons/main/folder-icons/list.txt").then((res) => res.text());
+    const appIcons = await fetch("https://raw.githubusercontent.com/sameerasw/mac-icons/main/app-icons/list.txt").then((res) => res.text());
     const folderIconsList = folderIcons.split("\n");
     const appIconsList = appIcons.split("\n");
 
