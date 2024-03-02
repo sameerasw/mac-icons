@@ -1,36 +1,33 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    // Specify the GitHub repository information
-    var username = 'sameerasw';
-    var repo = 'mac-icons';
-    var path1 = 'folder-icons/';
-    var path2 = 'app-icons/';
+    // read the two list.txt files inside the /folder-icons and /app-icons folders and get files names of each line from it
+    const folderIcons = await fetch("/folder-icons/list.txt").then((res) => res.text());
+    const appIcons = await fetch("/app-icons/list.txt").then((res) => res.text());
+    const folderIconsList = folderIcons.split("\n");
+    const appIconsList = appIcons.split("\n");
 
-    // Get the imageGallery container
-    var imageGalleryContainer = document.getElementById('grid');
+    let icongrid = document.getElementById("grid");
 
-    function fetchImages(path) {
-        return fetch(`https://api.github.com/repos/${username}/${repo}/contents/${path}`)
-            .then(response => response.json())
-            .then(data => {
-                // Filter only the image files
-                var imageFiles = data.filter(item => item.type === 'file' && item.name.match(/\.(jpg|jpeg|png|gif)$/i));
+    // create the folder icons
+    folderIconsList.forEach((icon) => {
+        if (icon) {
+            let img = document.createElement("img");
+            img.src = `/folder-icons/${icon}`;
+            img.alt = icon;
+            img.title = icon;
+            img.classList.add("icon");
+            icongrid.appendChild(img);
+        }
+    });
 
-                // Generate img tags and append them to the imageGallery container
-                imageFiles.forEach(function (imageFile) {
-                    var img = document.createElement('img');
-                    img.src = imageFile.download_url;
-                    img.alt = imageFile.name; // You can set alt text if needed
-                    imageGalleryContainer.appendChild(img);
-                });
-            })
-            .catch(error => console.error('Error fetching images:', error));
-    }
-
-    try {
-        // Fetch the list of images in the subdirectories
-        Promise.all([fetchImages(path1), fetchImages(path2)])
-            .catch(error => console.error('Error fetching images:', error));
-    } catch (error) {
-        console.error('Error fetching images:', error);
-    }
+    // create the app icons
+    appIconsList.forEach((icon) => {
+        if (icon) {
+            let img = document.createElement("img");
+            img.src = `/app-icons/${icon}`;
+            img.alt = icon;
+            img.title = icon;
+            img.classList.add("icon");
+            icongrid.appendChild(img);
+        }
+    });
 });
