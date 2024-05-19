@@ -39,3 +39,4 @@ whatsapp.png
 adobe-lightroom-classic.png
 davinci-resolve.png
 adobe-illustrator.png
+pixelbuilds.png
