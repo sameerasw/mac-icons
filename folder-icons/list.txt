@@ -40,4 +40,7 @@ adobe-lightroom-classic.png
 davinci-resolve.png
 adobe-illustrator.png
 pixelbuilds.png
-mi-a2-lite.pngpixel-4a5g.pngpixel-5.pngsameerasw.png
+mi-a2-lite.png
+pixel-4a5g.png
+pixel-5.png
+sameerasw.png
