@@ -25,6 +25,10 @@ adobe-acrobat.png
 adobe-lightroom.png
 arc-1.png
 arc-3.png
+mi-a2-lite.png
+pixel-4a5g.png
+pixel-5.png
+sameerasw.png
 adobe-photoshop.png
 arc-2.png
 intellij.png
@@ -40,7 +44,3 @@ adobe-lightroom-classic.png
 davinci-resolve.png
 adobe-illustrator.png
 pixelbuilds.png
-mi-a2-lite.png
-pixel-4a5g.png
-pixel-5.png
-sameerasw.png
